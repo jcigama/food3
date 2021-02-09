@@ -8,8 +8,9 @@ error_reporting(E_ALL);
 //Start a session
 session_start();
 
-//Require the autoload file
+//Require files
 require_once('vendor/autoload.php');
+require_once('model/data-layer.php');
 
 //Create an instance of the Base class
 $f3 = Base::instance();
@@ -17,24 +18,28 @@ $f3 = Base::instance();
 //Turn on Fat-Free error reporting
 $f3->set('DEBUG', 3);
 
-//Define a default route (home page)
+//default
 $f3->route('GET /', function() {
     //Display a view
     $view = new Template();
     echo $view->render('views/home.html');
 });
 
-//Define a order route (home page)
-$f3->route('GET /order', function() {
+//order
+$f3->route('GET /order', function($f3) {
+
+    $f3->set('meals', getMeals());
+
     //Display a view
     $view = new Template();
     echo $view->render('views/form1.html');
 });
 
-//Define a order route (home page)
-$f3->route('POST /order2', function() {
+//order2
+$f3->route('POST /order2', function($f3) {
 
-    var_dump($_POST);
+    $f3->set('condiments', getCondiments());
+
     if(isset($_POST['food'])) {
         $_SESSION['food'] = $_POST['food'];
     }
@@ -48,7 +53,7 @@ $f3->route('POST /order2', function() {
     echo $view->render('views/form2.html');
 });
 
-//Define a summary route (home page)
+//summary
 $f3->route('POST /summary', function() {
     echo "<p>POST:</p><BR>";
     var_dump($_POST);

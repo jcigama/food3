@@ -8,20 +8,16 @@
                 <input type="text" name="food">
             </label><br>
 
-            <label>Select a meal
-            </label><br>
-
-            <input type="radio" name="food[]" value="Breakfast" id="breakfast">
-            <label for="breakfast">Breakfast
-            </label><br>
-
-            <input type="radio" name="food[]" value="Lunch" id="lunch">
-            <label for="lunch">Lunch
-            </label><br>
-
-            <input type="radio" name="food[]" value="Dinner" id="dinner">
-            <label for="dinner">Dinner
-            </label><br>
+            <label class="col-sm-2 control-label">Select a meal
+            </label>
+            <div class="col-sm-4">
+                <br>
+                <repeat group="{{ @meals }}" value="{{ @meal }}">
+                    <input type="radio" name="food[]" value="{{ @meal }}" id="{{ @meal }}">
+                    <label>{{ ucfirst(@meal) }}
+                    </label><br>
+                </repeat>
+            </div>
 
             <input type="submit" value="Next >>">
         </form>

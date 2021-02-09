@@ -5,20 +5,17 @@
 
         <form method="post" action="summary">
 
-            <label>Select condiments
-            </label><br>
 
-            <input type="checkbox" name="conds[]" value="Mayo" id="mayo">
-            <label for="mayo">Mayo
-            </label><br>
-
-            <input type="checkbox" name="conds[]" value="Ketchup" id="ketchup">
-            <label for="Ketchup">ketchup
-            </label><br>
-
-            <input type="checkbox" name="conds[]" value="Hoisin" id="hoisin">
-            <label for="hoisin">Hoisin
-            </label><br>
+            <label class="col-sm-2 control-label">Select condiments
+            </label>
+            <div class="col-sm-4">
+                <br>
+                <repeat group="{{ @condiments }}" value="{{ @condiment }}">
+                    <input type="radio" name="conds" value="{{ @condiment }}" id="{{ @condiment }}">
+                    <label>{{ ucfirst(@condiment) }}
+                    </label><br>
+                </repeat>
+            </div>
 
             <input type="submit" value="Next >>">
         </form>
