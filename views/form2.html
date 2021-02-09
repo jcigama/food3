@@ -11,7 +11,7 @@
             <div class="col-sm-4">
                 <br>
                 <repeat group="{{ @condiments }}" value="{{ @condiment }}">
-                    <input type="radio" name="conds" value="{{ @condiment }}" id="{{ @condiment }}">
+                    <input type="radio" name="conds[]" value="{{ @condiment }}" id="{{ @condiment }}">
                     <label>{{ ucfirst(@condiment) }}
                     </label><br>
                 </repeat>
