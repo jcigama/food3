@@ -1,0 +1,27 @@
+<include href="views/header.html"></include>
+<body>
+    <div class="container">
+        <h1>Food Order Continued</h1>
+
+        <form method="post" action="summary">
+
+            <label>Select condiments
+            </label><br>
+
+            <input type="checkbox" name="conds[]" value="Mayo" id="mayo">
+            <label for="mayo">Mayo
+            </label><br>
+
+            <input type="checkbox" name="conds[]" value="Ketchup" id="ketchup">
+            <label for="Ketchup">ketchup
+            </label><br>
+
+            <input type="checkbox" name="conds[]" value="Hoisin" id="hoisin">
+            <label for="hoisin">Hoisin
+            </label><br>
+
+            <input type="submit" value="Next >>">
+        </form>
+    </div>
+</body>
+</html>

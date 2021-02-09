@@ -1,0 +1,31 @@
+<include href="views/header.html"></include>
+<body>
+    <div class="container">
+        <h1>Food Order</h1>
+        <form method="post" action="order2">
+
+            <label>What would you like to order?
+                <input type="text" name="food">
+            </label><br>
+
+            <label>Select a meal
+            </label><br>
+
+            <input type="radio" name="food[]" value="Breakfast" id="breakfast">
+            <label for="breakfast">Breakfast
+            </label><br>
+
+            <input type="radio" name="food[]" value="Lunch" id="lunch">
+            <label for="lunch">Lunch
+            </label><br>
+
+            <input type="radio" name="food[]" value="Dinner" id="dinner">
+            <label for="dinner">Dinner
+            </label><br>
+
+            <input type="submit" value="Next >>">
+        </form>
+    </div>
+
+</body>
+</html>
